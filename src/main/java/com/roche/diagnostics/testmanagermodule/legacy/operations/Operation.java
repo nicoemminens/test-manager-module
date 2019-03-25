@@ -1,6 +1,8 @@
 package com.roche.diagnostics.testmanagermodule.legacy.operations;
 
-public interface OperationI<T> {
+import com.roche.diagnostics.testmanagermodule.legacy.Test;
+
+public interface Operation<T extends Test> {
 
 	default String getOperationName() {
 		return this.getClass().getName();

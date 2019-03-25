@@ -3,7 +3,7 @@ package com.roche.diagnostics.testmanagermodule.legacy.operations;
 import com.roche.diagnostics.testmanagermodule.legacy.Test;
 
 // This operation is the same for all the test type
-public class GenericOperation<T extends Test> implements OperationI<T> {
+public class GenericOperation<T extends Test> implements Operation<T> {
 
 	public String getTestInfo(T test) {
 		StringBuilder sb = new StringBuilder();

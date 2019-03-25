@@ -6,14 +6,14 @@ import java.util.Map;
 import java.util.Set;
 
 import com.roche.diagnostics.testmanagermodule.legacy.beans.CommonPropertiesBean;
-import com.roche.diagnostics.testmanagermodule.legacy.operations.OperationI;
+import com.roche.diagnostics.testmanagermodule.legacy.operations.Operation;
 import com.roche.diagnostics.testmanagermodule.legacy.operations.TestOperations;
 
 public abstract class Test {
 
 	private CommonPropertiesBean commonProperties;
 
-	private Set<OperationI> operations = new HashSet<>();
+	private Set<Operation> operations = new HashSet<>();
 
 	protected Test(CommonPropertiesBean commonProperties) {
 		this.commonProperties = commonProperties;
@@ -48,11 +48,11 @@ public abstract class Test {
 
 	public abstract double operationB(int a);
 
-	public Set<OperationI> getOperations() {
+	public Set<Operation> getOperations() {
 		return operations;
 	}
 
-	public void addOperation(OperationI<? extends Test> operation) {
+	public void addOperation(Operation<? extends Test> operation) {
 		operations.add(operation);
 	}
 }

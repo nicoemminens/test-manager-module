@@ -2,7 +2,7 @@ package com.roche.diagnostics.testmanagermodule.legacy.operations;
 
 import com.roche.diagnostics.testmanagermodule.legacy.Test;
 
-public interface LabelOperation<T extends Test> extends OperationI<T> {
+public interface LabelOperation<T extends Test> extends Operation<T> {
 
 	default String getLabel(T test) {
 		return test.getCommonProperties().getCommonPropertyA();

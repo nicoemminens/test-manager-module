@@ -2,6 +2,11 @@
 
 Refactoring strategy for the module Test Manager of LIS (Laboratory Information System).
 
+## UML diagram
+This is the UML class diagram [UML class diagram][1].
+
+[1]: ClassDiagram.html  "UML class diagram"
+
 ## Refactoring strategy
 
 ### Before refactoring
