@@ -4,7 +4,7 @@ Refactoring strategy for the module Test Manager of LIS (Laboratory Information 
 
 ## UML diagram
 
-<a href="ClassDiagram.html" target="_blank">UML class diagram</a>
+![Image of UML classes diagram](ClassDiagram.jpg)
 
 ## Refactoring strategy
 
