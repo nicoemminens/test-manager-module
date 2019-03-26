@@ -76,13 +76,13 @@ In the below image we can see an example of how execute all the operation of a t
 - There are examples of common Operations (interface TestOperations default method), different implementations for type, operations for only two test types and in the junit test OperationTest addHematologyOperation there are an example of add operation dinamically (I don`t like personally this approach because its dificult to maintain if it is not done with care):
 
 ```java
-		// It is possible add operation dinamically
-		hematology.addOperation(new LabelOperation<Hematology>() {
-			@Override
-			public String getLabel(Hematology test) {
-				return test.getPropertyHematologyA() + ": " + test.getCommonProperties().getCommonPropertyA();
-			}
-		});
+	// It is possible add operation dinamically
+	hematology.addOperation(new LabelOperation<Hematology>() {
+		@Override
+		public String getLabel(Hematology test) {
+			return test.getPropertyHematologyA() + ": " + test.getCommonProperties().getCommonPropertyA();
+		}
+	});
 ```
 	
 - The responses map with class name String key it's a quick idea for execute and test it quick. I have imagined that operations no need a response, they save theirs results in a data base, file, send to other systems, etc. But if response was required and was more complex I would make a hierarchy of generics responses objects by test type.
