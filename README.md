@@ -2,6 +2,36 @@
 
 Refactoring strategy for the module Test Manager of LIS (Laboratory Information System).
 
+## Patterns used
+
+The proposal solution is based in SOLID principles and core features of OOP Encapsulation, Inheritance, Polymorphism and Abstraction.
+In addition to that I have used delegate pattern for the relation between operations and test types.
+
+- Single responsability principle: All the objects has one responsability for instance BiochemistryCalculation object has the responsability of do all the operations related with Biochemistry Calculation.
+
+- Open/Closed plinciple: This design is open for extension, for that reason I use Test abstract class, Operation interface, all the operations that are candidates for having different implementations by type are interfaces as well. Even TestOperations is an interface for load the different types of test in a different way implementing it.
+This design allows create new operations and more test types without modifying anything for that reason is closed for modification.
+
+- Liskov substitution principle: All the interfaces and abstract class test works perfect without dependencies with its subtypes objects. If any operation it's removed or changed the software won't be affected.
+
+- Interface segregation principle: It is achieved by Operations interfaces for example CalculationOperation and LabelOperation each operation has its own interface. With this approach we achieve that only the test types that need an implementation they implement it.
+
+- Dependency inversion principle: All the code its based in interfaces and generics for not depending on an implementation.
+
+In the below image we can see an example of how execute all the operation of a test without knowing its implementation.
+
+```java
+	public Map<String, Object> executeOperations() {
+		Map<String, Object> resultMap = new HashMap<>();
+		operations.parallelStream().forEach(o -> {
+			resultMap.put(o.getOperationName(), o.doOperation(this));
+		});
+
+		return resultMap;
+	}
+```
+
+
 ## UML diagram
 
 ![Image of UML classes diagram](ClassDiagram.jpg)
@@ -39,5 +69,7 @@ Refactoring strategy for the module Test Manager of LIS (Laboratory Information 
 - Make sure that developers have knowledge about the new architecture. Possible training may be required.
 - Verify the new code with pull request for avoid as far as possible new refactor.
 
+## Notes of the proposal solution
 
+- 
   
