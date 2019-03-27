@@ -48,7 +48,7 @@ Below image we can see an example of how execute all the test operations without
 - Check all the libraries: it is a good moment for version update.
 - Divide refactoring in phases.
 	* Phase 1: Move Test hierarchy using inheritance for all the types with the common properties in Test parent and the own types properties in the type class.
-	* Phase 2: Move old operations to Test parent and override the necessary in its sons (the different types).
+	* Phase 2: Move old operations to Test parent and override in its sons the necessary operations (the different types).
 	* Phase 3: Creates the delegate patron for operations and make it with generics.
 	* Phase 4: Move all the operations to delegate patron.
 - Create task for these phases.
