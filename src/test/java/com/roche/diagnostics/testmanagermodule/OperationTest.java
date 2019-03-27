@@ -83,7 +83,7 @@ public class OperationTest {
 		assertEquals(getStringGenericOperation(hematology),
 				hematology.executeOperations().get(GenericOperation.class.getName()));
 
-		// It is possible add operation dinamically
+		// It is possible add operation dynamically
 		hematology.addOperation(new LabelOperation<Hematology>() {
 			@Override
 			public String getLabel(Hematology test) {
